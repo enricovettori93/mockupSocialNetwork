@@ -1,0 +1,45 @@
+/* Spacing Helpers */
+$spaces: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30);
+$sides: ('t', 'b', 'l', 'r', 'x', 'y', '');
+
+@each $space in $spaces {
+  @each $side in $sides {
+
+    @if $side == '' {
+      .m#{$space} {
+        margin: #{$space}px;
+      }
+      .p#{$space} {
+        padding: #{$space}px;
+      }
+    } @elseif $side == 'x' {
+      .m#{$space} {
+        margin-right: #{$space}px;
+        margin-left: #{$space}px;
+      }
+
+      .p#{$space} {
+        padding-right: #{$space}px;
+        padding-left: #{$space}px;
+      }
+    } @elseif $side == 'y' {
+      .m#{$space} {
+        margin-top: #{$space}px;
+        margin-bottom: #{$space}px;
+      }
+
+      .p#{$space} {
+        padding-top: #{$space}px;
+        padding-bottom: #{$space}px;
+      }
+    } @else {
+      .m#{str-slice($side, 0, 1)}#{$space} {
+        margin-#{$side}: #{$space}px;
+      }
+
+      .p#{str-slice($side, 0, 1)}#{$space} {
+        padding-#{$side}: #{$space}px;
+      }
+    }
+  }
+}

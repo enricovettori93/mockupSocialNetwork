@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import NavBarIcon from '@/components/common/NavBarIcon.vue';
+import NavBarIcon from '@/components/common/navbar/NavBarIcon.vue';
 
 @Component({
   components: {
@@ -28,14 +28,14 @@ export default class Navbar extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import "src/styles/variables";
+@import "../../../styles/variables";
 .navbar {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 10vh;
+  height: 8vh;
   background-color: $navbar-background-color;
-  z-index: 9999;
+  z-index: 10;
   display: flex;
   &__icon {
     flex: 1;

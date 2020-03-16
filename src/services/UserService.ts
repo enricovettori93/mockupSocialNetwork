@@ -12,8 +12,11 @@ export default class UserService {
     });
   }
 
-  public static logout(): void {
-    localStorage.clear();
+  public static logout(): Promise<void> {
+    return new Promise((resolve) => {
+      localStorage.clear();
+      resolve();
+    });
   }
 
   public static isLogged(): boolean {
