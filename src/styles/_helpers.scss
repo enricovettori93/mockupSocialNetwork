@@ -1,45 +1,35 @@
-/* Spacing Helpers */
-$spaces: (1, 2, 3, 4, 5, 10, 15, 20, 25, 30);
-$sides: ('t', 'b', 'l', 'r', 'x', 'y', '');
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
+$spacing-xxl: 128px;
 
-@each $space in $spaces {
-  @each $side in $sides {
-
-    @if $side == '' {
-      .m#{$space} {
-        margin: #{$space}px;
-      }
-      .p#{$space} {
-        padding: #{$space}px;
-      }
-    } @elseif $side == 'x' {
-      .m#{$space} {
-        margin-right: #{$space}px;
-        margin-left: #{$space}px;
-      }
-
-      .p#{$space} {
-        padding-right: #{$space}px;
-        padding-left: #{$space}px;
-      }
-    } @elseif $side == 'y' {
-      .m#{$space} {
-        margin-top: #{$space}px;
-        margin-bottom: #{$space}px;
-      }
-
-      .p#{$space} {
-        padding-top: #{$space}px;
-        padding-bottom: #{$space}px;
-      }
-    } @else {
-      .m#{str-slice($side, 0, 1)}#{$space} {
-        margin-#{$side}: #{$space}px;
-      }
-
-      .p#{str-slice($side, 0, 1)}#{$space} {
-        padding-#{$side}: #{$space}px;
-      }
-    }
-  }
+$spacings: (
+        'xxs': $spacing-xxs,
+        'xs': $spacing-xs,
+        'sm': $spacing-sm,
+        'md': $spacing-md,
+        'lg': $spacing-lg,
+        'xl': $spacing-xl,
+        'xxl': $spacing-xxl,
+        'auto': auto,
+        '0': 0
+);
+@each $key, $spacing in $spacings {
+  .m-#{$key}{ margin: $spacing !important; }
+  .mt-#{$key}{ margin-top: $spacing !important; }
+  .mb-#{$key}{ margin-bottom: $spacing !important; }
+  .ml-#{$key}{ margin-left: $spacing !important; }
+  .mr-#{$key}{ margin-right: $spacing !important; }
+  .my-#{$key}{ margin-top: $spacing !important; margin-bottom: $spacing !important; }
+  .mx-#{$key}{ margin-left: $spacing !important; margin-right: $spacing !important; }
+  .p-#{$key}{ padding: $spacing !important; }
+  .pt-#{$key}{ padding-top: $spacing !important; }
+  .pb-#{$key}{ padding-bottom: $spacing !important; }
+  .pl-#{$key}{ padding-left: $spacing !important; }
+  .pr-#{$key}{ padding-right: $spacing !important; }
+  .py-#{$key}{ padding-top: $spacing !important; padding-bottom: $spacing !important; }
+  .px-#{$key}{ padding-left: $spacing !important; padding-right: $spacing !important; }
 }

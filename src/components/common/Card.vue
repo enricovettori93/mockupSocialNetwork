@@ -15,7 +15,7 @@ export default class Card extends Vue {
 <style scoped lang="scss">
 @import "../../styles/variables";
 .card {
-  background-color: $card-background-color;
+  background-color: $main-grey;
   border-radius: $global-radious;
 }
 </style>

@@ -38,9 +38,10 @@ export default class FeedCard extends Vue {
 </script>
 
 <style scoped lang="scss">
-  // FIXME: use margin/padding helpers
+// FIXME: use margin/padding helpers
+@import '../../../styles/mixins';
+
 .feedcard {
-  margin: 30px;
   &__title {
     padding: 10px;
     font-weight: bold;
@@ -50,14 +51,17 @@ export default class FeedCard extends Vue {
   }
   &__actions {
     display: flex;
+
     &-action {
       padding: 10px;
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: all .3s ease-in-out;
+      transition: color $animation-duration ease-in-out;
+
       &--full {
+        @include bouncein();
         color: red;
       }
     }
