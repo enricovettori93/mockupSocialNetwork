@@ -1,11 +1,21 @@
+class State {
+  loading = false;
+  whiteoverlay = false;
+}
+
+
 const getters = {
   GET_LOADING_STATUS: (state: { loading: boolean }) => state.loading,
+  GET_WHITE_OVERLAY_STATUS: (state: { whiteoverlay: boolean }) => state.whiteoverlay,
 };
 
 // actions
 const actions = {
-  UPDATE_LOADING_STATUS({ commit }: any, { loading = false }) {
-    commit('UPDATE_LOADING_STATUS', loading);
+  UPDATE_LOADING_STATUS({ commit }: any, { status = false }) {
+    commit('UPDATE_LOADING_STATUS', status);
+  },
+  UPDATE_WHITE_OVERLAY_STATUS({ commit }: any, { status = false }) {
+    commit('UPDATE_WHITE_OVERLAY_STATUS', status);
   },
 };
 
@@ -14,16 +24,14 @@ const mutations = {
   UPDATE_LOADING_STATUS(state: { loading: boolean }, payload: boolean) {
     state.loading = payload;
   },
-};
-
-// initial state
-const state = {
-  loading: false,
+  UPDATE_WHITE_OVERLAY_STATUS(state: { whiteoverlay: boolean }, payload: boolean) {
+    state.whiteoverlay = payload;
+  },
 };
 
 export default {
   namespaced: true,
-  state,
+  state: new State(),
   getters,
   actions,
   mutations,

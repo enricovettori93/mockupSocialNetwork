@@ -1,20 +1,28 @@
 <template>
   <div id="app">
+    <WhiteOverlay/>
     <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Login from './views/Login.vue';
+import WhiteOverlay from '@/components/common/WhiteOverlay.vue';
 
 @Component({
   components: {
-    Login,
+    WhiteOverlay,
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+body {
+  display: flex;
+
+  .app {
+    display: flex;
+  }
+}
 </style>

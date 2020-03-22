@@ -14,6 +14,9 @@ import '@/styles/_helpers.scss';
 // i18n
 import messages from './translations/it';
 
+// tslint:disable no-empty-interface
+const vClickOutside = require('v-click-outside');
+
 // Router
 const router = new Router();
 router.addRoutes(routes);
@@ -21,6 +24,7 @@ router.addRoutes(routes);
 Vue.config.productionTip = false;
 Vue.use(VueI18n);
 Vue.use(Router);
+Vue.use(vClickOutside);
 
 sync(store, router);
 

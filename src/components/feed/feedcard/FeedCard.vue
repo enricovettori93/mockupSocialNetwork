@@ -1,7 +1,7 @@
 <template>
   <Card class="feedcard">
     <div class="feedcard__title">
-      {{ feed.title }}
+      {{ feed.writtenBy.name }} {{ feed.writtenBy.surname }}
     </div>
     <div class="feedcard__content">
       {{ feed.content }}

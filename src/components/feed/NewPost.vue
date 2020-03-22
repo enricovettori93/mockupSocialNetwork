@@ -36,7 +36,6 @@ $font-user: 60px;
 $margin-user: ($font-user / 2) + 10px;
 
 .newpost {
-  position: relative;
   border-radius: $global-radious;
   border: 2px solid $main-grey;
   text-align: center;

@@ -1,6 +1,5 @@
 import Feed from '@/models/Feed';
 import FeedService from '@/services/FeedService';
-import { GetterTree, MutationTree, ActionTree } from 'vuex';
 
 // initial state
 class State {
