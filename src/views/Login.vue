@@ -33,7 +33,10 @@ export default class Login extends Vue {
 
   protected login() {
     UserService.login(this.login_data.email, this.login_data.password)
-      .then(() => this.$router.push({ name: 'main-app' }))
+      .then((response) => {
+        this.$store.dispatch('user/SET_USER', response);
+        this.$router.push({ name: 'main-app' });
+      })
       .catch((e) => console.error(e));
   }
 }

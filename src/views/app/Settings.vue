@@ -1,6 +1,6 @@
 <template>
   <div class="settings">
-    <h1>Settings</h1>
+    <h1 class="page-title">{{$t('PAGE_SETTINGS_TITLE')}}</h1>
   </div>
 </template>
 

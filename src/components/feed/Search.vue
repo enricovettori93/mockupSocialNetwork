@@ -34,7 +34,6 @@ export default class Search extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import "../../styles/variables";
 @import "../../styles/zindex";
 $min-width: 50px;
 
@@ -48,6 +47,7 @@ $min-width: 50px;
   z-index: $z-index-search;
   position: absolute;
   right: 0;
+  top: 10px;
 
   form {
     display: flex;
@@ -68,7 +68,7 @@ $min-width: 50px;
   }
 
   &--active {
-    width: calc(100% - #{$card-margin * 2});
+    width: 100%;
     .search {
       &__input {
         opacity: 1;

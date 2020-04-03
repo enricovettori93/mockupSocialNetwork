@@ -1,6 +1,6 @@
 <template>
   <div class="newpost">
-    <span class="newpost__user material-icons">account_circle</span>
+    <img class="newpost__user avatar-normal" :src="$devGenerateAvatarIconToBeRemoved($store.state.user.id)">
     <div class="newpost__inputarea">
       <form @submit.prevent="doPost">
         <Input v-model="post"
@@ -30,10 +30,7 @@ export default class NewPost extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import "../../styles/variables";
-
-$font-user: 60px;
-$margin-user: ($font-user / 2) + 10px;
+$margin-user: ($avatar-normal / 2) + 10px;
 
 .newpost {
   border-radius: $global-radious;
@@ -43,7 +40,6 @@ $margin-user: ($font-user / 2) + 10px;
 
   &__user {
     z-index: 1;
-    font-size: $font-user;
     margin-top: -$margin-user;
   }
 }

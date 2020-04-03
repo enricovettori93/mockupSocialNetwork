@@ -6,7 +6,7 @@ export default interface Feed {
   title: string,
   content: string,
   hasLike: boolean,
-  comments?: [Comment],
+  comments?: Comment[],
   createdAt: Date,
   writtenBy: User,
 }

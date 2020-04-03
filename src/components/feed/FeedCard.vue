@@ -38,22 +38,22 @@ export default class FeedCard extends Vue {
 </script>
 
 <style scoped lang="scss">
-// FIXME: use margin/padding helpers
-@import '../../../styles/mixins';
+@import '../../styles/mixins';
+$card-padding: ($spacing-xs + $spacing-xxs);
 
 .feedcard {
   &__title {
-    padding: 10px;
+    padding: $card-padding;
     font-weight: bold;
   }
   &__content {
-    padding: 10px;
+    padding: $card-padding;
   }
   &__actions {
     display: flex;
 
     &-action {
-      padding: 10px;
+      padding: $card-padding;
       flex: 1;
       display: flex;
       justify-content: center;

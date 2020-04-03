@@ -14,7 +14,7 @@ const getters = {
 const actions = {
   FETCH_FEEDS({ commit }: any) {
     FeedService.fetchFeeds()
-      .then((feeds) => commit('FETCH_FEEDS', feeds))
+      .then((feeds) => commit('STORE_FEEDS', feeds))
       .catch((e) => console.error(e));
   },
   SET_LIKE_FEED({ commit }: any, item: Feed) {
@@ -26,7 +26,7 @@ const actions = {
 
 // mutations
 const mutations = {
-  FETCH_FEEDS(state: { items: Feed[] }, payload: Feed[]) {
+  STORE_FEEDS(state: { items: Feed[] }, payload: Feed[]) {
     state.items = payload;
   },
   SET_LIKE_FEED(state: { items: Feed[] }, payload: Feed) {

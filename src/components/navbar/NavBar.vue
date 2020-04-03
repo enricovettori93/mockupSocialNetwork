@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <nav class="navbar">
     <NavBarIcon @click="goTo('feed')"
                 class="navbar__icon"
                 :class="{ 'navbar__icon--active': this.isActive('feed') }">view_day</NavBarIcon>
@@ -12,7 +12,7 @@
     <NavBarIcon @click="goTo('account')"
                 class="navbar__icon"
                 :class="{ 'navbar__icon--active': this.isActive('account') }">person</NavBarIcon>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -45,6 +45,7 @@ export default class Navbar extends Vue {
   background-color: $navbar-background-color;
   z-index: 10;
   display: flex;
+  margin: 0 (-$spacing-lg);
 
   &__icon {
     flex: 1;

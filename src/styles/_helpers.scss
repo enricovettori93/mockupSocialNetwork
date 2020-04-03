@@ -1,10 +1,4 @@
-$spacing-xxs: 4px;
-$spacing-xs: 8px;
-$spacing-sm: 16px;
-$spacing-md: 24px;
-$spacing-lg: 32px;
-$spacing-xl: 64px;
-$spacing-xxl: 128px;
+@import "variables";
 
 $spacings: (
         'xxs': $spacing-xxs,
