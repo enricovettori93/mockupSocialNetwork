@@ -12,11 +12,11 @@ const getters = {
 };
 
 // actions
-const actions: ActionTree<State, State> = {
-  UPDATE_LOADING_STATUS({ commit }: ActionContext<State, State>, { status = false }) {
+const actions: ActionTree<State, any> = {
+  UPDATE_LOADING_STATUS({ commit }: ActionContext<State, any>, { status = false }) {
     commit('UPDATE_LOADING_STATUS', status);
   },
-  UPDATE_WHITE_OVERLAY_STATUS({ commit }: ActionContext<State, State>, { status = false }) {
+  UPDATE_WHITE_OVERLAY_STATUS({ commit }: ActionContext<State, any>, { status = false }) {
     commit('UPDATE_WHITE_OVERLAY_STATUS', status);
   },
 };

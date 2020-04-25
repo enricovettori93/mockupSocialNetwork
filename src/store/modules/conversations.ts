@@ -14,18 +14,18 @@ const getters = {
 };
 
 // actions
-const actions: ActionTree<State, State> = {
-  FETCH_CONVERSATIONS({ commit }: ActionContext<State, State>) {
+const actions: ActionTree<State, any> = {
+  FETCH_CONVERSATIONS({ commit }: ActionContext<State, any>) {
     ConversationService.fetchConversations()
       .then((feeds) => commit('STORE_CONVERSATIONS', feeds))
       .catch((e) => console.error(e));
   },
-  FETCH_CONVERSATION_MESSAGE({ commit }: ActionContext<State, State>, { id }: { id: number }) {
+  FETCH_CONVERSATION_MESSAGE({ commit }: ActionContext<State, any>, { id }: { id: number }) {
     ConversationService.fetchConversationMessages(id)
       .then((response: Conversation) => commit('STORE_SELECTED_CONVERSATION', response))
       .catch((e) => console.error(e));
   },
-  DESTROY_SELECTED_CONVERSATION({ commit }: ActionContext<State, State>) {
+  DESTROY_SELECTED_CONVERSATION({ commit }: ActionContext<State, any>) {
     commit('DESTROY_SELECTED_CONVERSATION');
   },
 };

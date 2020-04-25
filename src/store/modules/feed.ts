@@ -12,13 +12,13 @@ const getters = {
 };
 
 // actions
-const actions: ActionTree<State, State> = {
-  FETCH_FEEDS({ commit }: ActionContext<State, State>) {
+const actions: ActionTree<State, any> = {
+  FETCH_FEEDS({ commit }: ActionContext<State, any>) {
     FeedService.fetchFeeds()
       .then((feeds) => commit('STORE_FEEDS', feeds))
       .catch((e) => console.error(e));
   },
-  SET_LIKE_FEED({ commit }: ActionContext<State, State>, item: Feed) {
+  SET_LIKE_FEED({ commit }: ActionContext<State, any>, item: Feed) {
     FeedService.setLike(item)
       .then(() => commit('SET_LIKE_FEED', item))
       .catch((e) => console.error(e));

@@ -13,8 +13,8 @@ const getters = {
 };
 
 // actions
-const actions: ActionTree<State, State> = {
-  SET_USER({ commit }: ActionContext<State, State>, user?: User) {
+const actions: ActionTree<State, any> = {
+  SET_USER({ commit }: ActionContext<State, any>, user?: User) {
     commit('SET_USER', user);
   },
 };

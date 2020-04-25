@@ -17,6 +17,7 @@ module.exports = {
     'lines-between-class-members': 'off',
     'max-len': 'off',
     "typescript/no-var-requires": "off",
-    "typescript/ban-ts-ignore": 'off'
+    "typescript/ban-ts-ignore": 'off',
+    "typescript/no-explicit-any": "off",
   },
 };
