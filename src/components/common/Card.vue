@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="$emit('click')">
     <slot></slot>
   </div>
 </template>
@@ -14,8 +14,10 @@ export default class Card extends Vue {
 
 <style scoped lang="scss">
 @import "../../styles/variables";
+$card-padding: ($spacing-xs + $spacing-xxs);
 .card {
   background-color: $main-grey;
   border-radius: $global-radious;
+  padding: $card-padding;
 }
 </style>

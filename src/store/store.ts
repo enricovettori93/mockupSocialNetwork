@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import feed from '@/store/modules/feed';
 import conversations from '@/store/modules/conversations';
 import ui from '@/store/modules/ui';
@@ -14,4 +15,12 @@ export default new Vuex.Store({
     conversations,
     user,
   },
+  plugins: [
+    createPersistedState({
+      key: 'mockup-social-network',
+      paths: [ // list of modules saved in local-storage
+        'user',
+      ],
+    }),
+  ],
 });

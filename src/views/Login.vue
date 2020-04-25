@@ -17,14 +17,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Button from '@/components/common/inputs/Button.vue';
-import Input from '@/components/common/inputs/Input.vue';
 import UserService from '@/services/UserService';
 
-@Component({
-  components: { Button, Input },
-})
-
+@Component
 export default class Login extends Vue {
   login_data = {
     email: '',

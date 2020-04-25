@@ -1,17 +1,13 @@
 <template>
   <nav class="navbar">
     <NavBarIcon @click="goTo('feed')"
-                class="navbar__icon"
-                :class="{ 'navbar__icon--active': this.isActive('feed') }">view_day</NavBarIcon>
+                :active="isActive(['feed'])">view_day</NavBarIcon>
     <NavBarIcon @click="goTo('messages')"
-                class="navbar__icon"
-                :class="{ 'navbar__icon--active': this.isActive('messages') }">chat_bubble</NavBarIcon>
+                :active="isActive(['messages', 'message-detail'])">chat_bubble</NavBarIcon>
     <NavBarIcon @click="goTo('notifications')"
-                class="navbar__icon"
-                :class="{ 'navbar__icon--active': this.isActive('notifications') }">notifications</NavBarIcon>
+                :active="isActive(['notifications'])">notifications</NavBarIcon>
     <NavBarIcon @click="goTo('account')"
-                class="navbar__icon"
-                :class="{ 'navbar__icon--active': this.isActive('account') }">person</NavBarIcon>
+                :active="isActive(['account'])">person</NavBarIcon>
   </nav>
 </template>
 
@@ -26,40 +22,27 @@ import NavBarIcon from '@/components/navbar/NavBarIcon.vue';
 })
 export default class Navbar extends Vue {
   goTo(name: string) {
-    this.$router.push({ name });
+    if (this.$router.currentRoute.name !== name) {
+      this.$router.push({ name });
+    }
   }
 
-  isActive(name: string) {
-    return name === this.$store.state.route.name;
+  isActive(routes: string[]) {
+    return routes.includes(this.$store.state.route.name);
   }
 }
 </script>
 
 <style scoped lang="scss">
-@import "../../styles/variables";
+  @import "../../styles/zindex";
 .navbar {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 8vh;
+  height: $navbar-height;
   background-color: $navbar-background-color;
-  z-index: 10;
+  z-index: $z-index-navbar;
   display: flex;
   margin: 0 (-$spacing-lg);
-
-  &__icon {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: $navbar-icon-size;
-    transition: background-color .2s ease-in-out;
-    margin: 10px;
-    border-radius: 40px;
-
-    &--active {
-      background-color: rgb(185, 185, 185);
-    }
-  }
 }
 </style>

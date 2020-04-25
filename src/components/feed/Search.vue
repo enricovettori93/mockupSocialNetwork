@@ -35,14 +35,14 @@ export default class Search extends Vue {
 
 <style scoped lang="scss">
 @import "../../styles/zindex";
+@import "../../styles/mixins";
 $min-width: 50px;
 
 .search {
-  border-radius: $global-radious;
-  border: 2px solid $main-grey;
+  @include main-border();
   height: 50px;
   min-width: $min-width;
-  transition: width $animation-duration-speed ease-in-out;
+  transition: width $animation-duration-speed cubic-bezier(.3,.66,.56,.96);
   padding: 10px;
   z-index: $z-index-search;
   position: absolute;

@@ -1,4 +1,7 @@
-class User {
+import { ActionContext, ActionTree } from 'vuex';
+import User from '@/models/User';
+
+class State {
   id = null;
   email = '';
   name = '';
@@ -6,13 +9,13 @@ class User {
 }
 
 const getters = {
-  GET_USER: (state: any) => state,
+  GET_USER: (state: User) => state,
 };
 
 // actions
-const actions = {
-  SET_USER({ commit }: any, user?: User) {
-    commit('UPDATE_USER', user);
+const actions: ActionTree<State, State> = {
+  SET_USER({ commit }: ActionContext<State, State>, user?: User) {
+    commit('SET_USER', user);
   },
 };
 
@@ -20,7 +23,7 @@ const actions = {
 const mutations = {
   SET_USER(state: { id: number | null; email: string; name: string; surname: string }, payload: User) {
     if (payload) {
-      state = Object.assign({}, payload);
+      Object.assign(state, payload);
     } else {
       state.id = null;
       state.email = '';
@@ -32,7 +35,7 @@ const mutations = {
 
 export default {
   namespaced: true,
-  state: new User(),
+  state: new State(),
   getters,
   actions,
   mutations,

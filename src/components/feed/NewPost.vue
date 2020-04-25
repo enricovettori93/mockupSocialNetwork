@@ -7,7 +7,7 @@
                type="text"
                :text="$t('NEW_POST')"
                id="new_post"/>
-        <Button>{{$t('NEW_POST_SUBMIT')}}</Button>
+        <Button class="mt-xs">{{$t('NEW_POST_SUBMIT')}}</Button>
       </form>
     </div>
   </div>
@@ -15,12 +15,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Input from '@/components/common/inputs/Input.vue';
-import Button from '@/components/common/inputs/Button.vue';
 
-@Component({
-  components: { Input, Button },
-})
+@Component
 export default class NewPost extends Vue {
   post = '';
   doPost() {
@@ -30,11 +26,11 @@ export default class NewPost extends Vue {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/mixins';
 $margin-user: ($avatar-normal / 2) + 10px;
 
 .newpost {
-  border-radius: $global-radious;
-  border: 2px solid $main-grey;
+  @include main-border();
   text-align: center;
   padding: 10px;
 

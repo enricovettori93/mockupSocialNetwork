@@ -30,6 +30,38 @@ const fakeConversations: Conversation[] = [
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, sem ut ultrices pulvinar, mi odio interdum risus',
         createdAt: new Date(),
       },
+      {
+        id: 4,
+        writtenBy: {
+          id: 99,
+        },
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, sem ut ultrices pulvinar, mi odio interdum risus',
+        createdAt: new Date(),
+      },
+      {
+        id: 4,
+        writtenBy: {
+          id: 99,
+        },
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, sem ut ultrices pulvinar, mi odio interdum risus',
+        createdAt: new Date(),
+      },
+      {
+        id: 4,
+        writtenBy: {
+          id: 99,
+        },
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, sem ut ultrices pulvinar, mi odio interdum risus',
+        createdAt: new Date(),
+      },
+      {
+        id: 4,
+        writtenBy: {
+          id: 99,
+        },
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, sem ut ultrices pulvinar, mi odio interdum risus',
+        createdAt: new Date(),
+      },
     ],
   },
   {

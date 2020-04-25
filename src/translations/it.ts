@@ -9,6 +9,7 @@ const messages = {
     PAGE_MESSAGES_TITLE: 'Messaggi',
     PAGE_NOTIFICATIONS_TITLE: 'Notifiche',
     PAGE_SETTINGS_TITLE: 'Impostazioni',
+    MESSAGE_DETAIL_LAST_VIEW: 'Ultimo accesso: {login}',
   },
 };
 

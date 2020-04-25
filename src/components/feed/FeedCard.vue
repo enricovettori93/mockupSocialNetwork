@@ -43,17 +43,17 @@ $card-padding: ($spacing-xs + $spacing-xxs);
 
 .feedcard {
   &__title {
-    padding: $card-padding;
+    padding: $card-padding 0px 0px 0px;
     font-weight: bold;
   }
   &__content {
-    padding: $card-padding;
+    padding: $card-padding 0px;
   }
   &__actions {
     display: flex;
 
     &-action {
-      padding: $card-padding;
+      padding: $card-padding 0px;
       flex: 1;
       display: flex;
       justify-content: center;

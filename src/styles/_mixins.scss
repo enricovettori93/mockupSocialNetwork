@@ -1,5 +1,10 @@
 @import 'variables';
 
+@mixin main-border {
+  border-radius: $global-radious;
+  border: 2px solid $main-grey;
+}
+
 @mixin bouncein {
   animation: animation-bounce-in $animation-duration;
   @keyframes animation-bounce-in {

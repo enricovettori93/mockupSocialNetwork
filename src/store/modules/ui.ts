@@ -1,3 +1,5 @@
+import { ActionContext, ActionTree } from 'vuex';
+
 class State {
   loading = false;
   whiteoverlay = false;
@@ -10,11 +12,11 @@ const getters = {
 };
 
 // actions
-const actions = {
-  UPDATE_LOADING_STATUS({ commit }: any, { status = false }) {
+const actions: ActionTree<State, State> = {
+  UPDATE_LOADING_STATUS({ commit }: ActionContext<State, State>, { status = false }) {
     commit('UPDATE_LOADING_STATUS', status);
   },
-  UPDATE_WHITE_OVERLAY_STATUS({ commit }: any, { status = false }) {
+  UPDATE_WHITE_OVERLAY_STATUS({ commit }: ActionContext<State, State>, { status = false }) {
     commit('UPDATE_WHITE_OVERLAY_STATUS', status);
   },
 };

@@ -1,5 +1,6 @@
 import Feed from '@/models/Feed';
 import FeedService from '@/services/FeedService';
+import { ActionContext, ActionTree } from 'vuex';
 
 // initial state
 class State {
@@ -7,17 +8,17 @@ class State {
 }
 
 const getters = {
-  GET_FEEDS: (state: { items: any }) => state.items,
+  GET_FEEDS: (state: { items: Feed[] }) => state.items,
 };
 
 // actions
-const actions = {
-  FETCH_FEEDS({ commit }: any) {
+const actions: ActionTree<State, State> = {
+  FETCH_FEEDS({ commit }: ActionContext<State, State>) {
     FeedService.fetchFeeds()
       .then((feeds) => commit('STORE_FEEDS', feeds))
       .catch((e) => console.error(e));
   },
-  SET_LIKE_FEED({ commit }: any, item: Feed) {
+  SET_LIKE_FEED({ commit }: ActionContext<State, State>, item: Feed) {
     FeedService.setLike(item)
       .then(() => commit('SET_LIKE_FEED', item))
       .catch((e) => console.error(e));

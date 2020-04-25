@@ -1,5 +1,5 @@
 <template>
-  <div class="mainapp px-lg pt-xs">
+  <div class="mainapp px-lg">
     <router-view></router-view>
     <NavBar></NavBar>
   </div>
@@ -21,5 +21,7 @@ export default class MainApp extends Vue {
 <style scoped lang="scss">
 .mainapp {
   display: flex;
+  height: calc(100vh - #{$navbar-height});
+  overflow-y: scroll;
 }
 </style>

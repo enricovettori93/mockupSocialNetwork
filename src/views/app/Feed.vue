@@ -1,7 +1,9 @@
 <template>
   <div class="feed">
-    <h1 class="page-title">{{$t('PAGE_FEED_TITLE')}}</h1>
-    <Search class="feed__search"/>
+    <div class="feed__search">
+      <h1 class="page-title">{{$t('PAGE_FEED_TITLE')}}</h1>
+      <Search/>
+    </div>
     <NewPost class="feed__newpost my-lg"/>
     <FeedCard class="feed__card my-lg" v-for="item in feeds" :key="item.id" :feed="item"/>
   </div>
@@ -31,7 +33,6 @@ export default class Feed extends Vue {
 
 <style scoped lang="scss">
 .feed {
-  margin-bottom: 100px;
   position: relative;
 }
 </style>

@@ -31,6 +31,13 @@ const routes = [
         path: '/app/messages',
         name: 'messages',
         component: Messages,
+        children: [
+          {
+            path: ':id',
+            name: 'message-detail',
+            component: Messages,
+          },
+        ],
       },
       {
         path: '/app/notifications',

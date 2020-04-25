@@ -1,9 +1,14 @@
-$global-radious: 15px;
+// Colors
+$navbar-background-color: rgb(221, 221, 221);
 $main-grey: rgb(245, 245, 245);
+$main-azure: rgb(234, 242, 255);
+
+// Global
+$global-radious: 15px;
 
 // Navbar
-$navbar-background-color: rgb(221, 221, 221);
 $navbar-icon-size: 28px;
+$navbar-height: 8vh;
 
 // Feeds
 $card-feed-title-font-size: 15px;

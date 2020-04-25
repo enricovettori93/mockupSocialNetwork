@@ -16,6 +16,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'lines-between-class-members': 'off',
     'max-len': 'off',
-    "typescript/no-var-requires": "off"
+    "typescript/no-var-requires": "off",
+    "typescript/ban-ts-ignore": 'off'
   },
 };
