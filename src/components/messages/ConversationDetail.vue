@@ -49,6 +49,7 @@ export default class ConversationDetail extends Vue {
     z-index: $z-index-user-msg;
     background-color: white;
     margin-left: (-$spacing-xl);
+    margin-right: (-$spacing-md);
     padding: 0 $spacing-xl;
 
     &-detail {

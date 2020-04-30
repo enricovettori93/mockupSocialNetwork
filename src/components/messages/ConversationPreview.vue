@@ -1,5 +1,9 @@
 <template>
     <Card @click="$emit('select', conversation)">
+      <DropdownMenuOptions class="card-menu">
+        <DropdownOption>{{$t('BLOCK_USER')}}</DropdownOption>
+        <DropdownOption>{{$t('DELETE')}}</DropdownOption>
+      </DropdownMenuOptions>
       <div class="conversation-preview">
         <div class="conversation-preview__title">
             <img class="conversation-preview__title-avatar avatar-small" :src="$devGenerateAvatarIconToBeRemoved(conversation.user.id)">
@@ -18,9 +22,11 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Conversation from '@/models/Conversation';
 import Card from '@/components/common/Card.vue';
+import DropdownMenuOptions from '@/components/common/dropdownmenu/DropdownMenuOptions.vue';
+import DropdownOption from '@/components/common/dropdownmenu/DropdownOption.vue';
 
 @Component({
-  components: { Card },
+  components: { Card, DropdownMenuOptions, DropdownOption },
 })
 export default class ConversationPreview extends Vue {
   @Prop() conversation!: Conversation;
@@ -35,6 +41,11 @@ export default class ConversationPreview extends Vue {
 </script>
 
 <style scoped lang="scss">
+@import "../../styles/variables";
+
+.card-menu {
+  padding: $card-padding;
+}
 .conversation-preview {
   display: flex;
   flex-direction: column;

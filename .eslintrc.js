@@ -19,5 +19,8 @@ module.exports = {
     "typescript/no-var-requires": "off",
     "typescript/ban-ts-ignore": 'off',
     "typescript/no-explicit-any": "off",
+    "typescript-eslint/no-unused-vars": "off",
+    "no-restricted-globals": "off",
+    "class-methods-use-this": "off",
   },
 };

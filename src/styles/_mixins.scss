@@ -1,8 +1,32 @@
 @import 'variables';
 
 @mixin main-border {
-  border-radius: $global-radious;
+  border-radius: $global-radius;
   border: 2px solid $main-grey;
+}
+
+@mixin fadein {
+  animation: animation-fade-in $animation-duration;
+  @keyframes animation-fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin fadeout {
+  animation: animation-fade-out $animation-duration;
+  @keyframes animation-fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }
 
 @mixin bouncein {

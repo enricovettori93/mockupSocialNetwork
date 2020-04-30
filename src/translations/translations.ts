@@ -1,0 +1,43 @@
+export enum languages {
+  IT = 'it',
+  EN = 'en',
+};
+
+export const messages = {
+  it: {
+    LOGIN_EMAIL: 'Inserisci la tua email',
+    LOGIN_PASSWORD: 'Inserisci la password',
+    LOGIN_BUTTON_GO: 'Accedi',
+    NEW_POST: 'A cosa stai pensando?',
+    NEW_POST_SUBMIT: 'Invia',
+    PAGE_FEED_TITLE: 'Feed',
+    PAGE_MESSAGES_TITLE: 'Messaggi',
+    PAGE_NOTIFICATIONS_TITLE: 'Notifiche',
+    PAGE_SETTINGS_TITLE: 'Impostazioni',
+    MESSAGE_DETAIL_LAST_VIEW: 'Ultimo accesso: {login}',
+    EDIT: 'Modifica',
+    DELETE: 'Elimina',
+    BLOCK_USER: 'Blocca utente',
+    PRIVACY: 'Privacy',
+    LANGUAGE: 'Cambio lingua (EN/IT)',
+    LOGOUT: 'Logout',
+  },
+  en: {
+    LOGIN_EMAIL: 'Insert your email',
+    LOGIN_PASSWORD: 'Insert your password',
+    LOGIN_BUTTON_GO: 'Login',
+    NEW_POST: 'What are you thinking?',
+    NEW_POST_SUBMIT: 'Send',
+    PAGE_FEED_TITLE: 'Feed',
+    PAGE_MESSAGES_TITLE: 'Messages',
+    PAGE_NOTIFICATIONS_TITLE: 'Notifications',
+    PAGE_SETTINGS_TITLE: 'Settings',
+    MESSAGE_DETAIL_LAST_VIEW: 'Last view: {login}',
+    EDIT: 'Edit',
+    DELETE: 'Delete',
+    BLOCK_USER: 'Block this user',
+    PRIVACY: 'Privacy',
+    LANGUAGE: 'Language switcher (IT/EN)',
+    LOGOUT: 'Logout',
+  },
+};

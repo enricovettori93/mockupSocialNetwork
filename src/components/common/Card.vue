@@ -14,10 +14,9 @@ export default class Card extends Vue {
 
 <style scoped lang="scss">
 @import "../../styles/variables";
-$card-padding: ($spacing-xs + $spacing-xxs);
 .card {
   background-color: $main-grey;
-  border-radius: $global-radious;
+  border-radius: $global-radius;
   padding: $card-padding;
 }
 </style>

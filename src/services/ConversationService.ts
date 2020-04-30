@@ -11,12 +11,11 @@ export default class FeedService {
   public static fetchConversationMessages(id: number): Promise<Conversation> {
     return new Promise((resolve, reject) => {
       const response = fakeConversations.find((item) => item.id === id);
-      // (response) ? resolve(response) : reject(); fucking tslint
-      if (response) {
-        resolve(response);
-      } else {
-        reject(new Error(`Can't find conversation ${id}`));
-      }
+      (response) ? resolve(response) : reject();
     });
+  }
+
+  public static markAsRead(notification: Conversation): Promise<void> {
+    return Promise.resolve();
   }
 }

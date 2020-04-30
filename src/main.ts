@@ -16,7 +16,7 @@ import 'material-icons/iconfont/material-icons.scss';
 import './styles/app.scss';
 
 // i18n
-import messages from './translations/it';
+import { messages } from './translations/translations';
 
 // tslint:disable no-var-requires
 const vClickOutside = require('v-click-outside');

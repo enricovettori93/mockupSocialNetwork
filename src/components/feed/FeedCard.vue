@@ -1,11 +1,6 @@
 <template>
   <Card class="feedcard">
-    <div class="feedcard__title">
-      {{ feed.writtenBy.name }} {{ feed.writtenBy.surname }}
-    </div>
-    <div class="feedcard__content">
-      {{ feed.content }}
-    </div>
+    <FeedCardContent :feed="feed"></FeedCardContent>
     <div class="feedcard__actions">
       <span @click="setFavorite()"
             class="feedcard__actions-action material-icons"
@@ -20,10 +15,12 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Card from '@/components/common/Card.vue';
 import Feed from '@/models/Feed';
+import FeedCardContent from '@/components/feed/FeedCardContent.vue';
 
 @Component({
   components: {
     Card,
+    FeedCardContent,
   },
 })
 export default class FeedCard extends Vue {
@@ -42,13 +39,6 @@ export default class FeedCard extends Vue {
 $card-padding: ($spacing-xs + $spacing-xxs);
 
 .feedcard {
-  &__title {
-    padding: $card-padding 0px 0px 0px;
-    font-weight: bold;
-  }
-  &__content {
-    padding: $card-padding 0px;
-  }
   &__actions {
     display: flex;
 

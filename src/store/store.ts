@@ -5,6 +5,7 @@ import feed from '@/store/modules/feed';
 import conversations from '@/store/modules/conversations';
 import ui from '@/store/modules/ui';
 import user from '@/store/modules/user';
+import notifications from '@/store/modules/notifications';
 
 Vue.use(Vuex);
 
@@ -14,6 +15,7 @@ export default new Vuex.Store({
     feed,
     conversations,
     user,
+    notifications,
   },
   plugins: [
     createPersistedState({

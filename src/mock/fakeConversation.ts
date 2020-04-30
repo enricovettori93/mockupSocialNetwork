@@ -4,6 +4,7 @@ const fakeConversations: Conversation[] = [
   {
     id: 1,
     createdAt: new Date(),
+    read: false,
     user: {
       id: 1,
       email: 'fake@a.it',
@@ -67,6 +68,7 @@ const fakeConversations: Conversation[] = [
   {
     id: 2,
     createdAt: new Date(),
+    read: false,
     user: {
       id: 2,
       email: 'fake@b.it',

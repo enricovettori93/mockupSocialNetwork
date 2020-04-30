@@ -9,8 +9,9 @@ class State {
 }
 
 const getters = {
-  GET_CONVERSATIONS: (state: { items: Conversation[] }) => state.items,
-  GET_SELECTED_CONVERSATION: (state: { selectedConversation: Conversation }) => state.selectedConversation,
+  GET_CONVERSATIONS: (state: { items: Conversation[] }): Conversation[] => state.items,
+  GET_SELECTED_CONVERSATION: (state: { selectedConversation: Conversation }): Conversation => state.selectedConversation,
+  GET_NOTIFICATIONS_UNREAD: (state: { items: Conversation[] }): number => state.items.filter((item) => !item.read).length,
 };
 
 // actions
@@ -28,6 +29,11 @@ const actions: ActionTree<State, any> = {
   DESTROY_SELECTED_CONVERSATION({ commit }: ActionContext<State, any>) {
     commit('DESTROY_SELECTED_CONVERSATION');
   },
+  MARK_AS_READ({ commit }: ActionContext<State, any>, item: Conversation) {
+    ConversationService.markAsRead(item)
+      .then(() => commit('MARK_AS_READ', item))
+      .catch((e) => console.error(e));
+  },
 };
 
 // mutations
@@ -41,6 +47,12 @@ const mutations = {
   DESTROY_SELECTED_CONVERSATION(state: { selectedConversation: Conversation | null }) {
     if (state.selectedConversation) {
       state.selectedConversation = null;
+    }
+  },
+  MARK_AS_READ(state: { items: Conversation[] }, payload: Conversation) {
+    const find = state.items.find((item) => item.id === payload.id);
+    if (find) {
+      find.read = true;
     }
   },
 };

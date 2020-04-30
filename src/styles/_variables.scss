@@ -1,10 +1,22 @@
+// Padding & margin
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
+$spacing-xxl: 128px;
+
 // Colors
 $navbar-background-color: rgb(221, 221, 221);
 $main-grey: rgb(245, 245, 245);
 $main-azure: rgb(234, 242, 255);
 
+// Cards
+$card-padding: ($spacing-xs + $spacing-xxs);
+
 // Global
-$global-radious: 15px;
+$global-radius: 15px;
 
 // Navbar
 $navbar-icon-size: 28px;
@@ -15,19 +27,14 @@ $card-feed-title-font-size: 15px;
 $card-feed-content-font-size: 10px;
 $card-margin: 30px;
 
+// Animartions
 $animation-duration: .5s;
 $animation-duration-speed: .3s;
 
-// Padding & margin
-$spacing-xxs: 4px;
-$spacing-xs: 8px;
-$spacing-sm: 16px;
-$spacing-md: 24px;
-$spacing-lg: 32px;
-$spacing-xl: 64px;
-$spacing-xxl: 128px;
-
 // Avatar
-$avatar-normal: 70px;
-$avatar-small: 45px;
-$avatar-big: 120px;
+$avatar-normal: 70px !important;
+$avatar-small: 45px !important;
+$avatar-big: 120px !important;
+
+// Box shadow from bulma
+$global-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);

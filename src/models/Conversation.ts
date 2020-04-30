@@ -6,4 +6,5 @@ export default interface Conversation {
   createdAt: Date,
   messages: MessageConversation[],
   user: User,
+  read: boolean,
 }
