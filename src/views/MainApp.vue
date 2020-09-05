@@ -14,7 +14,13 @@ import NavBar from '@/components/navbar/NavBar.vue';
   },
 })
 export default class MainApp extends Vue {
-
+  async created() {
+    this.setup();
+  }
+  private setup() {
+    this.$store.dispatch('conversations/FETCH_CONVERSATIONS');
+    this.$store.dispatch('notifications/FETCH_NOTIFICATIONS');
+  }
 }
 </script>
 

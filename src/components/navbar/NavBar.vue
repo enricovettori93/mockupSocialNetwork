@@ -1,10 +1,12 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar py-xxs">
     <NavBarIcon @click="goTo('feed')"
                 :active="isActive(['feed'])">view_day</NavBarIcon>
     <NavBarIcon @click="goTo('messages')"
+                :pendingnotifications="conversationsUnread"
                 :active="isActive(['messages', 'message-detail'])">chat_bubble</NavBarIcon>
     <NavBarIcon @click="goTo('notifications')"
+                :pendingnotifications="notificationsUnread"
                 :active="isActive(['notifications'])">notifications</NavBarIcon>
     <NavBarIcon @click="goTo('account')"
                 :active="isActive(['account'])">person</NavBarIcon>
@@ -13,11 +15,20 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mapGetters } from 'vuex';
 import NavBarIcon from '@/components/navbar/NavBarIcon.vue';
 
 @Component({
   components: {
     NavBarIcon,
+  },
+  computed: {
+    ...mapGetters('conversations', {
+      conversationsUnread: 'GET_NOTIFICATIONS_UNREAD',
+    }),
+    ...mapGetters('notifications', {
+      notificationsUnread: 'GET_NOTIFICATIONS_UNREAD',
+    }),
   },
 })
 export default class Navbar extends Vue {

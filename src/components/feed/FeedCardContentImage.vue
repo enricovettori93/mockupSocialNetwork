@@ -1,9 +1,6 @@
 <template>
   <div class="feedcardcontentimage">
-    <div class="feedcardcontentimage__title">
-      {{ feed.writtenBy.name }} {{ feed.writtenBy.surname }}
-    </div>
-    <div  @click="toggleFullScreen( $event,false)" class="feedcardcontentimage__content" :class="isFullScreen ? 'feedcardcontentimage__content--fullscreen' : 'feedcardcontentimage__content--nofullscreen'">
+    <div @click="toggleFullScreen( $event,false)" class="feedcardcontentimage__content" :class="isFullScreen ? 'feedcardcontentimage__content--fullscreen' : 'feedcardcontentimage__content--nofullscreen'">
       <span @click="toggleFullScreen( $event,false)" class="material-icons feedcardcontentimage__content-close">close</span>
       <img @click="toggleFullScreen( $event,true)" :src="feed.url" alt="">
     </div>
@@ -37,12 +34,6 @@ $card-padding: ($spacing-xs + $spacing-xxs);
 
 .feedcardcontentimage {
   margin: 0 (-($spacing-sm - $spacing-xxs));
-  &__title {
-    font-weight: bold;
-    position: absolute;
-    color: white;
-    padding: $card-padding 0px 0px $card-padding;
-  }
 
   &__content {
     &-close {

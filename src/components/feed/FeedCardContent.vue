@@ -1,11 +1,18 @@
 <template>
   <div class="feedcardcontent">
-    <template class="feedcardcontent__content" v-if="!isImage">
-      <FeedCardContentText :feed="feed"></FeedCardContentText>
-    </template>
-    <template class="feedcardcontent__content" v-else>
-      <FeedCardContentImage :feed="feed"></FeedCardContentImage>
-    </template>
+    <div class="feedcardcontent__title">
+      <router-link :to="{ name: 'user-detail', params: { id: feed.writtenBy.id } }">
+        {{ feed.writtenBy.name }} {{ feed.writtenBy.surname }}
+      </router-link>
+    </div>
+    <div class="feedcardcontent__content" >
+      <template v-if="!isImage">
+        <FeedCardContentText :feed="feed"></FeedCardContentText>
+      </template>
+      <template v-else>
+        <FeedCardContentImage :feed="feed"></FeedCardContentImage>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -35,5 +42,11 @@ export default class FeedCardContent extends Vue {
 @import '../../styles/variables';
 $card-padding: ($spacing-xs + $spacing-xxs);
 .feedcardcontent {
+  &__title {
+    font-weight: bold;
+  }
+  &__content {
+    padding: $card-padding 0px;
+  }
 }
 </style>

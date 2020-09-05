@@ -42,8 +42,6 @@ export default class Messages extends Vue {
   async created() {
     if (this.$route.params.id) {
       this.fetchMessages();
-    } else {
-      this.fetchConversations();
     }
   }
 

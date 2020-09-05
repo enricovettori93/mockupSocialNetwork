@@ -21,13 +21,6 @@ import NotificationCard from '@/components/notification/NotificationCard.vue';
   },
 })
 export default class Notifications extends Vue {
-  async created() {
-    this.fetchNotifications();
-  }
-
-  private fetchNotifications() {
-    this.$store.dispatch('notifications/FETCH_NOTIFICATIONS');
-  }
 }
 </script>
 

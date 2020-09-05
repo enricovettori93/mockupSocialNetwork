@@ -4,6 +4,7 @@ import Feed from '@/views/app/Feed.vue';
 import Messages from '@/views/app/Messages.vue';
 import Notifications from '@/views/app/Notifications.vue';
 import Settings from '@/views/app/Settings.vue';
+import User from '@/views/app/User.vue';
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
         path: '/app/settings',
         name: 'account',
         component: Settings,
+      },
+      {
+        path: '/app/user/:id',
+        name: 'user-detail',
+        component: User,
       },
     ],
   },

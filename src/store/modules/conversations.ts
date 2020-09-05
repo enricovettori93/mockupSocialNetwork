@@ -23,7 +23,11 @@ const actions: ActionTree<State, any> = {
   },
   FETCH_CONVERSATION_MESSAGE({ commit }: ActionContext<State, any>, { id }: { id: number }) {
     ConversationService.fetchConversationMessages(id)
-      .then((response: Conversation) => commit('STORE_SELECTED_CONVERSATION', response))
+      .then((response: Conversation) => {
+        commit('STORE_SELECTED_CONVERSATION', response);
+        return response;
+      })
+      .then((conversation) => commit('MARK_AS_READ', conversation))
       .catch((e) => console.error(e));
   },
   DESTROY_SELECTED_CONVERSATION({ commit }: ActionContext<State, any>) {

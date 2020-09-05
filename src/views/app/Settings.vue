@@ -1,9 +1,7 @@
 <template>
   <div class="settings">
     <h1 class="page-title">{{$t('PAGE_SETTINGS_TITLE')}}</h1>
-    <div class="settings__avatar">
-      <img class="settings__avatar avatar-big" :src="$devGenerateAvatarIconToBeRemoved($store.state.user.id)">
-    </div>
+    <UserHero :user="getCurrentUser()"/>
     <div class="settings__items">
       <Card class="my-sm">{{$t('PRIVACY')}}</Card>
       <Card class="my-sm" @click="changeLanguage()">{{$t('LANGUAGE')}}</Card>
@@ -15,12 +13,15 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Card from '@/components/common/Card.vue';
+import UserHero from '@/components/common/UserHero.vue';
 import UserService from '@/services/UserService';
 import LanguageService from '@/services/LanguageService';
+import User from '@/models/User';
 
 @Component({
   components: {
     Card,
+    UserHero,
   },
 })
 export default class Settings extends Vue {
@@ -31,6 +32,10 @@ export default class Settings extends Vue {
   protected logout(): void {
     UserService.logout()
       .then(() => location.reload());
+  }
+
+  protected getCurrentUser(): User {
+    return UserService.getUser();
   }
 }
 </script>
